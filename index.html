@@ -4,186 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aroma Group of Companies - Global Construction & Hospitality</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ihc: {
-                            dark: '#0a192f', // IHC Deep Navy
-                            primary: '#1e3a8a', // IHC Corporate Blue
-                            accent: '#E31F26', // IHC Gold/Bronze
-                            gray: '#f3f4f6',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Shared IHC Design DNA */
-        .hero-bg {
-            /* Using a construction/skyline architectural image to suit Aroma */
-            background-image: linear-gradient(rgba(10, 25, 47, 0.3), rgba(10, 25, 47, 0.5)), url('images/bg-2.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 1s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .nav-scrolled {
-            background-color: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-
-        .nav-transparent {
-            background-color: transparent;
-            padding-top: 1.5rem;
-            padding-bottom: 1.5rem;
-        }
-
-        /* Navigation Link Underline Effect */
-        .nav-link {
-            position: relative;
-            display: inline-block;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #E31F26;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Ensure underline works for both white and dark text */
-        .nav-link.text-white::after,
-        .nav-link.text-ihc-dark::after {
-            background-color: #E31F26;
-        }
-
-        /* Ticker Animation adapted for Corporate News */
-        .ticker-wrap {
-            width: 100%;
-            overflow: hidden;
-            background-color: #0a192f;
-            color: white;
-            white-space: nowrap;
-        }
-        .ticker {
-            display: inline-block;
-            padding-left: 100%;
-            animation: ticker 35s linear infinite;
-        }
-        .ticker__item {
-            display: inline-block;
-            padding: 0 2rem;
-            font-size: 0.8rem;
-            letter-spacing: 0.05em;
-        }
-        @keyframes ticker {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(-100%, 0, 0); }
-        }
-
-        /* Awards Scrolling Animation */
-        .awards-scroll-container {
-            overflow: hidden;
-            width: 100%;
-            position: relative;
-        }
-
-        .awards-scroll-row {
-            display: flex;
-            gap: 1.5rem;
-            width: fit-content;
-        }
-
-        .awards-scroll-row-left {
-            animation: scroll-left 30s linear infinite;
-        }
-
-        .awards-scroll-row-right {
-            animation: scroll-right 30s linear infinite;
-        }
-        
-        /* Pause on hover for better UX */
-        .awards-scroll-container:hover .awards-scroll-row {
-            animation-play-state: paused;
-        }
-
-        @keyframes scroll-left {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        @keyframes scroll-right {
-            0% {
-                transform: translateX(-50%);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        .award-card {
-            flex-shrink: 0;
-            width: 280px;
-            background-color: #ffffff;
-            padding: 1.5rem;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .award-card:hover {
-            border-color: #E31F26;
-            transform: translateY(-5px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .award-card i {
-            color: #E31F26;
-        }
-
-        .award-card h3 {
-            color: #1f2937;
-        }
-    </style>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body class="font-sans text-gray-800 antialiased overflow-x-hidden">
 
@@ -276,83 +99,103 @@
         </div>
     </section>
 
-    <!-- About / Stats -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <!-- Title Section -->
-            <div class="mb-12">
-                <span class="text-ihc-accent font-bold uppercase tracking-widest text-sm mb-2 block">Roots of Excellence</span>
-                <h2 class="text-5xl font-serif font-bold text-ihc-dark">A Tradition of Trust & Innovation</h2>
-            </div>
+    <!-- Redesigned About / Stats Section -->
+<section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <!-- Title Section -->
+        <div class="mb-16">
+            <span class="text-ihc-accent font-bold uppercase tracking-widest text-sm mb-2 block">Roots of Excellence</span>
+            <h2 class="text-5xl font-serif font-bold text-ihc-dark">A Tradition of Trust & Innovation</h2>
+        </div>
 
-            <!-- Two Column Layout -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-                <!-- Left Column -->
-                <div class="space-y-8">
-                    <!-- Top Left: Image + Text Block -->
-                    <div>
-                        <!-- Image 1: Construction -->
-                        <div class="rounded-xl overflow-hidden mb-6">
-                            <img src="images/Three_Decades_of_Legacy.jpg" alt="Construction" class="w-full h-64 object-cover rounded-xl">
-                        </div>
-                        
-                        <!-- Text Block 1: Leading Across Sectors -->
-                        <div>
-                            <h3 class="text-2xl font-bold text-ihc-dark mb-4">Leading Across Sectors</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Today, Aroma is a trusted multi-industry group spanning Construction, Hospitality, Investment Management, Real Estate, Film Production, Dining, and Organic Farming—powered by visionary leadership, innovation, and expert talent.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Bottom Left: Image Only -->
-                    <div class="rounded-xl overflow-hidden mt-24">
-                        <img src="images/Future_Focused_Growth.jpg" alt="Future-Focused Growth" class="w-full h-64 object-cover rounded-xl">
-                    </div>
-                </div>
+        <!-- Two Column Layout with Decorative Lines -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 relative">
 
-                <!-- Right Column -->
+            <!-- Vertical Line (Center Divider) -->
+            <div class="hidden lg:block absolute left-1/2 top-0 h-full w-px bg-gray-200"></div>
+
+            <!-- Left Column -->
+            <div class="space-y-24 relative">
+
+                <!-- Horizontal Line -->
+                <div class="hidden lg:block absolute -right-10 top-32 w-10 h-px bg-gray-300"></div>
+
+                <!-- Image 1 + Text -->
                 <div class="space-y-8">
-                    <!-- Top Right: Text Block + Image -->
-                    <div>
-                        <!-- Text Block 2: Three Decades of Legacy -->
-                        <div class="mb-6">
-                            <h3 class="text-2xl font-bold text-ihc-dark mb-4">Three Decades of Legacy</h3>
-                            <p class="text-gray-600 leading-relaxed">
-                                Founded in 1998, AROMA Group has grown from a Middle East building contracting specialist into a global powerhouse with three decades of presence across the UAE, India, and the UK.
-                            </p>
-                        </div>
-                        
-                        <!-- Image 2: Three Decades of Legacy (Team Hands) -->
-                        <div class="rounded-xl overflow-hidden">
-                            <img src="images/Leading_Across_Sectors.jpg" alt="Three Decades of Legacy" class="w-full h-64 object-cover rounded-xl">
-                        </div>
+                    <div class="rounded-xl overflow-hidden">
+                        <img src="images/Three_Decades_of_Legacy.jpg" alt="Construction" class="w-full h-64 object-cover rounded-xl">
                     </div>
-                    
-                    <!-- Bottom Right: Text Block Only -->
-                    <div class="mt-24">
-                        <h3 class="text-2xl font-bold text-ihc-dark mb-4">Future-Focused Growth</h3>
+
+                    <!-- Horizontal Line Under Image -->
+                    <div class="hidden lg:block w-full h-px bg-gray-300"></div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold text-ihc-dark mb-4">Leading Across Sectors</h3>
                         <p class="text-gray-600 leading-relaxed">
-                            AROMA is dedicated to driving sustainable growth, fostering continuous innovation, and exploring new horizons that expand its global impact.
+                            Today, Aroma is a trusted multi-industry group spanning Construction, Hospitality, Investment Management, Real Estate, Film Production, Dining, and Organic Farming—powered by visionary leadership, innovation, and expert talent.
                         </p>
                     </div>
                 </div>
+
+                <!-- Bottom Left Large Image -->
+                <div class="rounded-xl overflow-hidden">
+                    <img src="images/Future_Focused_Growth.jpg" alt="Future-Focused Growth" class="w-full h-64 object-cover rounded-xl">
+                </div>
             </div>
+
+            <!-- Right Column -->
+            <div class="space-y-24 relative">
+
+                <!-- Horizontal Line -->
+                <div class="hidden lg:block absolute -left-10 top-32 w-10 h-px bg-gray-300"></div>
+
+                <!-- Text + Image -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-ihc-dark mb-4">Three Decades of Legacy</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Founded in 1998, AROMA Group has grown from a Middle East building contracting specialist into a global powerhouse with three decades of presence across the UAE, India, and the UK.
+                        </p>
+                    </div>
+
+                    <div class="rounded-xl overflow-hidden">
+                        <img src="images/Leading_Across_Sectors.jpg" alt="Three Decades of Legacy" class="w-full h-64 object-cover rounded-xl">
+                    </div>
+                </div>
+
+                <!-- Bottom Right Text -->
+                <div>
+                    <h3 class="text-2xl font-bold text-ihc-dark mb-4">Future-Focused Growth</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        AROMA is dedicated to driving sustainable growth, fostering continuous innovation, and exploring new horizons that expand its global impact.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
 
             <!-- Statistics Row -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-gray-200 pt-8">
-                <div class="text-center">
-                    <h3 class="text-5xl font-bold text-ihc-dark mb-2 counter" data-target="30">0</h3>
-                    <p class="text-sm text-gray-600 uppercase tracking-wide">Years of Legacy</p>
-                </div>
+
                 <div class="text-center">
                     <h3 class="text-5xl font-bold text-ihc-dark mb-2 counter" data-target="3">0</h3>
                     <p class="text-sm text-gray-600 uppercase tracking-wide">Countries</p>
                 </div>
+
                 <div class="text-center">
                     <h3 class="text-5xl font-bold text-ihc-dark mb-2">8</h3>
                     <p class="text-sm text-gray-600 uppercase tracking-wide">Business Divisions</p>
                 </div>
+                
+                <div class="text-center">
+                    <h3 class="text-5xl font-bold text-ihc-dark mb-2 counter" data-target="30">0</h3>
+                    <p class="text-sm text-gray-600 uppercase tracking-wide">Years of Legacy</p>
+                </div>
+                
                 <div class="text-center">
                     <h3 class="text-5xl font-bold text-ihc-dark mb-2 counter" data-target="9400">0</h3>
                     <p class="text-sm text-gray-600 uppercase tracking-wide">Employees</p>
@@ -392,6 +235,7 @@
     </section>
 
     <!-- Leadership -->
+    <!--
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -417,6 +261,7 @@
             </div>
         </div>
     </section>
+    -->
 
     <!-- Business Verticals -->
     <section id="verticals" class="py-20 bg-gray-50">
@@ -430,7 +275,7 @@
                 <!-- 1. Aroma International Building Contracting LLC -->
                 <div class="group relative overflow-hidden bg-white shadow-md hover:shadow-2xl transition-all duration-300 h-96">
                     <img src="images/Aroma_International_Building_Contracting_LLC.jpg" alt="Construction" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-90"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-50 group-hover:opacity-90 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 p-8">
                         <i class="fas fa-hard-hat text-ihc-accent text-3xl mb-4"></i>
                         <h3 class="text-xl font-bold text-white mb-2">Aroma International Building Contracting LLC</h3>
@@ -443,7 +288,7 @@
                 <!-- 2. Fragrant Nature Hotels & Resorts -->
                 <div class="group relative overflow-hidden bg-white shadow-md hover:shadow-2xl transition-all duration-300 h-96">
                     <img src="images/Fragrant_Nature_Hotels_Resorts.jpg" alt="Hospitality" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-90"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-50 group-hover:opacity-90 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 p-8">
                         <i class="fas fa-concierge-bell text-ihc-accent text-3xl mb-4"></i>
                         <h3 class="text-xl font-bold text-white mb-2">Fragrant Nature Hotels & Resorts</h3>
@@ -456,7 +301,7 @@
                 <!-- 3. Fragrant Nature Film Creations -->
                 <div class="group relative overflow-hidden bg-white shadow-md hover:shadow-2xl transition-all duration-300 h-96">
                     <img src="images/Fragrant_Nature_Film_Creations.jpg" alt="Films" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-90"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-50 group-hover:opacity-90 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 p-8">
                         <i class="fas fa-film text-ihc-accent text-3xl mb-4"></i>
                         <h3 class="text-xl font-bold text-white mb-2">Fragrant Nature Film Creations</h3>
@@ -469,7 +314,7 @@
                 <!-- 4. Aroma Kitchen -->
                 <div class="group relative overflow-hidden bg-white shadow-md hover:shadow-2xl transition-all duration-300 h-96">
                     <img src="images/Aroma_Kitchen.jpg" alt="Aroma Kitchen" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-90"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-50 group-hover:opacity-90 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 p-8">
                         <i class="fas fa-utensils text-ihc-accent text-3xl mb-4"></i>
                         <h3 class="text-xl font-bold text-white mb-2">Aroma Kitchen</h3>
@@ -482,7 +327,7 @@
                 <!-- 5. East India Street Café -->
                 <div class="group relative overflow-hidden bg-white shadow-md hover:shadow-2xl transition-all duration-300 h-96">
                     <img src="images/East_India_Street_Café.jpg" alt="East India Street Café" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-90"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-50 group-hover:opacity-90 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 p-8">
                         <i class="fas fa-coffee text-ihc-accent text-3xl mb-4"></i>
                         <h3 class="text-xl font-bold text-white mb-2">East India Street Café</h3>
@@ -495,7 +340,7 @@
                 <!-- 6. MitonOptimal -->
                 <div class="group relative overflow-hidden bg-white shadow-md hover:shadow-2xl transition-all duration-300 h-96">
                     <img src="images/MitonOptimal.jpg" alt="MitonOptimal" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-90"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-50 group-hover:opacity-90 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 p-8">
                         <i class="fas fa-chart-line text-ihc-accent text-3xl mb-4"></i>
                         <h3 class="text-xl font-bold text-white mb-2">MitonOptimal</h3>
@@ -508,7 +353,7 @@
                 <!-- 7. Aroma Developers -->
                 <div class="group relative overflow-hidden bg-white shadow-md hover:shadow-2xl transition-all duration-300 h-96">
                     <img src="images/Aroma_Developers.jpg" alt="Aroma Developers" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-90"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-50 group-hover:opacity-90 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 p-8">
                         <i class="fas fa-city text-ihc-accent text-3xl mb-4"></i>
                         <h3 class="text-xl font-bold text-white mb-2">Aroma Developers</h3>
@@ -521,7 +366,7 @@
                 <!-- 8. LondonTyne (UK) Limited -->
                 <div class="group relative overflow-hidden bg-white shadow-md hover:shadow-2xl transition-all duration-300 h-96">
                     <img src="images/LondonTyne_UK_Limited.jpg" alt="LondonTyne" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-90"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-ihc-dark via-ihc-dark/60 to-transparent opacity-50 group-hover:opacity-90 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 p-8">
                         <i class="fas fa-building text-ihc-accent text-3xl mb-4"></i>
                         <h3 class="text-xl font-bold text-white mb-2">LondonTyne (UK) Limited</h3>
@@ -706,7 +551,7 @@
     <!-- Footer -->
     <footer class="bg-ihc-dark text-white border-t border-gray-800">
         <div class="container mx-auto px-6 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-4">
                 <!-- Brand -->
                 <div>
                     <div class="flex items-center gap-2 mb-6">
@@ -737,22 +582,22 @@
 
                 <!-- Divisions -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-ihc-accent">Divisions</h4>
+                    <h4 class="text-lg font-bold mb-6 text-ihc-accent">Our Businesses</h4>
                     <ul class="space-y-3 text-sm text-gray-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Aroma International Building Contracting LLC</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Fragrant Nature Hotels & Resorts</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Fragrant Nature Film Creations</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Aroma Kitchen</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">East India Street Café</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">MitonOptimal</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Aroma Developers</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">LondonTyne (UK) Limited</a></li>
+                        <li><a href="https://www.aromacontracting.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Aroma International Building Contracting LLC</a></li>
+                        <li><a href="https://www.fragrantnature.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Fragrant Nature Hotels & Resorts</a></li>
+                        <li><a href="https://www.fragrantnaturefilmcreations.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Fragrant Nature Film Creations</a></li>
+                        <li><a href="https://www.aromakitchentastes.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Aroma Kitchen</a></li>
+                        <li><a href="https://www.eastindiastreetcafe.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">East India Street Café</a></li>
+                        <li><a href="https://www.mitonoptimal.co.za/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">MitonOptimal</a></li>
+                        <li><a href="https://www.aromadevelopers.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Aroma Developers</a></li>
+                        <li><a href="https://www.londontyne.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LondonTyne (UK) Limited</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact -->
                 <div id="contact">
-                    <h4 class="text-lg font-bold mb-6 text-ihc-accent">Rooted Connections</h4>
+                    <h4 class="text-lg font-bold mb-6 text-ihc-accent">Get in touch</h4>
                     <ul class="space-y-4 text-sm text-gray-400">
                         <li class="flex items-start gap-3">
                             <i class="fas fa-map-marker-alt mt-1 text-ihc-accent"></i>
